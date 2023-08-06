@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Atur properti lainnya sesuai kebutuhan */
+}
+body {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}

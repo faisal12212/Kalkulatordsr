@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kalkulator BELI DAN JUAL SAHAM di IDX</title>
+    <style>
+      /* CSS untuk tampilan kalkulator */
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .input-group {
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background-color: #da1923;
+        color: rgb(242, 243, 243);
+        border: none;
+        cursor: pointer;
+      }
+
+      .result {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: 480px) {
+        /* Tampilan untuk perangkat dengan lebar maksimum 480px */
+        label {
+          font-size: 14px;
+          text-align: left;
+          margin-bottom: 2px;
+        }
+
+        input[type="number"] {
+          font-size: 14px;
+        }
+
+        button {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Kalkulator BELI DAN JUAL SAHAM</h2>
+
+    <div class="input-group">
+      <label for="beliHarga">Harga Beli Saham:</label>
+      <input type="number" id="beliHarga" step="0.01" value="" />
+    </div>
+
+    <div class="input-group">
+      <label for="beliLot">Lot Beli Saham:</label>
+      <input type="number" id="beliLot" value="" />
+    </div>
+
+    <div class="input-group">
+      <label for="pajakBeli">Pajak Beli Saham:</label>
+      <input type="number" id="pajakBeli" step="0.01" value="0.00" />
+    </div>
+
+    <div class="input-group">
+      <label for="jualHarga">Harga Jual Saham:</label>
+      <input type="number" id="jualHarga" step="0.01" value="" />
+    </div>
+
+    <div class="input-group">
+      <label for="jualLot">Lot jual Saham:</label>
+      <input type="number" id="jualLot" value="" />
+    </div>
+
+    <div class="input-group">
+      <label for="pajakJual">Pajak Jual Saham:</label>
+      <input type="number" id="pajakJual" step="0.01" value="0.00" />
+    </div>
+
+    <div class="input-group">
+      <label for="konversiBeli">Konversi Beli Saham:</label>
+      <span id="konversiBeli" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="totalPajakBeli">Total Pajak Beli Saham:</label>
+      <span id="totalPajakBeli" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="totalBeli">Total Beli Saham:</label>
+      <span id="totalBeli" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="konversiJual">Konversi Jual Saham:</label>
+      <span id="konversiJual" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="totalPajakJual">Total Pajak Jual Saham:</label>
+      <span id="totalPajakJual" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="totalJual">Total Jual Saham:</label>
+      <span id="totalJual" class="result">Rp.</span>
+    </div>
+
+    <div class="input-group">
+      <label for="Hasil JualBeli">Hasil keseluruhan Keuntungan DAN Kerugian:</label>
+      <span id="totaljualbeli" class="result">Rp.</span>
+    </div>
+    <tr>
+      <td>
+        <b>Hasil tersebut hanya 99% Akurat, selebihnya tanya Skuritas masing-masing </b>
+      </td>
+    </tr>
+    <tr>
+    </br>
+      <b>
+        <td>Biaya Tranding Jual dan Beli berdasarkan skuritas yang kalian pilih....</td>
+      </b>
+    </tr>
+    <button onclick="totaljualbeli()">Hitung</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+      function formatRupiah(angka) {
+        var reverse = angka.toString().split("").reverse().join("");
+        var ribuan = reverse.match(/\d{1,3}/g);
+        ribuan = ribuan.join(".").split("").reverse().join("");
+        return "Rp. " + ribuan;
+      }
+
+      function totaljualbeli() {
+        var hargaBeli = parseFloat(document.getElementById("beliHarga").value);
+        var lotBeli = parseFloat(document.getElementById("beliLot").value);
+        var pajakBeli = parseFloat(document.getElementById("pajakBeli").value);
+
+        var hargaJual = parseFloat(document.getElementById("jualHarga").value);
+        var lotJual = parseFloat(document.getElementById("jualLot").value);
+        var pajakJual = parseFloat(document.getElementById("pajakJual").value);
+
+        var konversiBeli = hargaBeli * lotBeli * 100;
+        document.getElementById("konversiBeli").textContent = formatRupiah(konversiBeli.toFixed(0));
+
+        var konversiJual = hargaJual * lotJual * 100;
+        document.getElementById("konversiJual").textContent = formatRupiah(konversiJual.toFixed(0));
+
+        var totalPajakBeli = (konversiBeli * pajakBeli) / 100;
+        document.getElementById("totalPajakBeli").textContent = formatRupiah(totalPajakBeli.toFixed(0));
+
+        var totalPajakJual = (konversiJual * pajakJual) / 100;
+        document.getElementById("totalPajakJual").textContent = formatRupiah(totalPajakJual.toFixed(0));
+
+        var totalBeli = konversiBeli + totalPajakBeli;
+        document.getElementById("totalBeli").textContent = formatRupiah(totalBeli.toFixed(0));
+
+        var totalJual = konversiJual - totalPajakJual;
+        document.getElementById("totalJual").textContent = formatRupiah(totalJual.toFixed(0));
+
+        var totaljualbeli = totalJual - totalBeli;
+
+        var hasilKeseluruhan = Math.abs(totaljualbeli);
+
+        if (totaljualbeli < 0) {
+          document.getElementById("totaljualbeli").textContent = "- " + formatRupiah(hasilKeseluruhan.toFixed(0));
+        } else {
+          document.getElementById("totaljualbeli").textContent = formatRupiah(hasilKeseluruhan.toFixed(0));
+        }
+      }
+
+      function reset() {
+        document.getElementById("beliHarga").value = "";
+        document.getElementById("beliLot").value = "";
+        document.getElementById("pajakBeli").value = "0,00";
+        document.getElementById("jualHarga").value = "";
+        document.getElementById("jualLot").value = "";
+        document.getElementById("pajakJual").value = "0,00";
+        document.getElementById("konversiBeli").textContent = "Rp.";
+        document.getElementById("totalPajakBeli").textContent = "Rp.";
+        document.getElementById("totalBeli").textContent = "Rp.";
+        document.getElementById("konversiJual").textContent = "Rp.";
+        document.getElementById("totalPajakJual").textContent = "Rp.";
+        document.getElementById("totalJual").textContent = "Rp.";
+        document.getElementById("totaljualbeli").textContent = "Rp.";
+      }
+    </script>
+  </body>
+</html>

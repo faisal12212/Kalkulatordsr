@@ -2,118 +2,73 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KALKULATOR PROFIT SAHAM</title>
+    <title>Kalkulator Profit Saham (KPS)</title>
     <link rel="stylesheet" href="styles.css" />
-    <style> </style>
   </head>
   <body>
-    <h2 style="text-align: center">KALKULATOR PROFIT SAHAM</h2>
-    <div class="input-group">
+    <h2 style="text-align: center">Kalkulator Profit Saham</h2>
+    <div class="chjon-alioj">
       <label for="abcdUnetn">Beli:</label>
-      <input type="number" id="abcdUnetn" step="0.001" value="" placeholder="Masukkan Nominal saham misalnya 50, 1011 atau 1234" />
+      <input type="number" id="abcdUnetn" step="0.001" value="" placeholder="Nominal saham yang dibeli" />
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="bryvYbg">Lot Beli:</label>
-      <input type="number" id="bryvYbg" value="" placeholder="Masukkan Lot saham yang dibeli" />
+      <input type="number" id="bryvYbg" value="" placeholder="Lot saham yang dibeli" />
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="mnwnxOryv">Fee Beli:</label>
-      <input type="number" id="mnwnxOryv" step="0.001" value="" placeholder="Masukkan angka seperti 15 or 0,25 or 0,2513" />
+      <input type="number" id="mnwnxOryv" step="0.001" value="" placeholder="Pajak/Fee beli (15/0,15/0,1513 dsb)" />
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="fznbQnetn">Jual:</label>
-      <input type="number" id="fznbQnetn" step="0.001" value="" placeholder="Masukkan Nominal saham misalnya 50, 1011 atau 1234" />
+      <input type="number" id="fznbQnetn" step="0.001" value="" placeholder="Nominal saham yang dijual" />
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="ghnyYbg">Lot jual:</label>
-      <input type="number" id="ghnyYbg" value="" placeholder="Masukkan Lot saham yang dijual" />
+      <input type="number" id="ghnyYbg" value="" placeholder="Lot saham yang dijual" />
     </div>
-    <div class="input-group">
-      <label for="lnwnxKhny">Fee Jual:</label>
-      <input type="number" id="lnwnxKhny" step="0.001" value="" placeholder="Masukkan angka misalnya 15 or 0,15 or 0,1513" />
+    <div class="chjon-alioj">
+      <label for="lnwnxKhny">Fee Jual/:</label>
+      <input type="number" id="lnwnxKhny" step="0.001" value="" placeholder="Pajak/Fee Jual (25/0,25/0,2513 dsb)" />
     </div>
     <button class="full-width-button" onclick="rbgnyacndoriu()">Hitung</button>
-    <button class="full-width-button" onclick="reset()">Reset</button>
-    <div class="input-group">
+    <button class="full-width-button" onclick="lymyn()">Reset</button>
+    <div class="chjon-alioj">
       <label for="hbairefvOryv">Nominal Beli:</label>
-      <span id="hbairefvOryv" class="result">Rp.</span>
+      <span id="hbairefvOryv" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="ibairefvBzna">Nominal Jual:</label>
-      <span id="ibairefvBzna" class="result">Rp.</span>
+      <span id="ibairefvBzna" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="obgnyOryv">Total Beli:</label>
-      <span id="obgnyOryv" class="result">Rp.</span>
+      <span id="obgnyOryv" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="qzqnyThny">Total Jual:</label>
-      <span id="qzqnyThny" class="result">Rp.</span>
+      <span id="qzqnyThny" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="pbgntCnwnxWhny">Total Fee Jual:</label>
-      <span id="pbgntCnwnxWhny" class="result">Rp.</span>
+      <span id="pbgntCnwnxWhny" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="nbgnyCnwnxOcau">Total Fee Beli:</label>
-      <span id="nbgnyCnwnxOcau" class="result">Rp.</span>
+      <span id="nbgnyCnwnxOcau" class="result"></span>
     </div>
-    <div class="input-group">
+    <div class="chjon-alioj">
       <label for="Unfvy WhnyOryv">Gain/Loss Bersih:</label>
-      <span id="rbgnyacndoriu" class="result">Rp.</span>
+      <span id="rbgnyacndoriu" class="result"></span>
     </div>
     <div id="arsbenqata-container">
-      <p><b> - Hasil PROFIT hanya 99% Akurat, selebihnya tanya Skuritas masing-masing </b></p>
-      <p><b> - Hasil PROFIT tidak termasuk biaya materai 10rb yang perhitungannya di atas 5juta dari nilai beli ataupun jual YANG MASUK KE RDN KALIAN</b></p>
-      <p><b> - BIAYA Tranding Jual dan Beli/BIAYA FEE jual beli saham berdasarkan SKURITAS yang kalian pilih</b></p>
+      <p><b> - Hasil Profit (Gain/Loss Bersih) yang masuk ke RDN 99% Akurat, keakurangnnya silakkan hubungi Skuritas masing-masing </b></p>
+      <p><b> - Hasil Profit (Gain/Loss Bersih) di luar perhitungan biaya materai 10rb yang perhitungannya di atas 5juta dari hasil bersih</b></p>
+      <p><b> - Biaya Tranding/Biaya Fee Beli dan Jual Saham berdasarkan Skuritas yang kalian pilih</b></p>
     </div>
-    <script>
-      function formatRupiah(angka) {
-        var reverse = angka.toString().split("").reverse().join("");
-        var evohna = reverse.match(/\d{1,3}/g);
-        evohna = evohna.join(".").split("").reverse().join("");
-        return "Rp. " + evohna; }
-      function rbgnyacndoriu() {
-        var cmetnOpyu = parseFloat(document.getElementById("abcdUnetn").value);
-        var jbgOryv = parseFloat(document.getElementById("bryvYbg").value);
-        var mnwnxOryv = parseFloat(document.getElementById("mnwnxOryv").value);
-        var enetnXina = parseFloat(document.getElementById("fznbQnetn").value);
-        var kbgDhja = parseFloat(document.getElementById("ghnyYbg").value);
-        var lnwnxKhny = parseFloat(document.getElementById("lnwnxKhny").value);
-        var hbairefvOryv = cmetnOpyu * jbgOryv * 100;
-        document.getElementById("hbairefvOryv").textContent = formatRupiah(hbairefvOryv.toFixed(0));
-        var ibairefvBzna = enetnXina * kbgDhja * 100;
-        document.getElementById("ibairefvBzna").textContent = formatRupiah(ibairefvBzna.toFixed(0));
-        var nbgnyCnwnxOcau = (hbairefvOryv * mnwnxOryv) / 100;
-        document.getElementById("nbgnyCnwnxOcau").textContent = formatRupiah(nbgnyCnwnxOcau.toFixed(0));
-        var pbgntCnwnxWhny = (ibairefvBzna * lnwnxKhny) / 100;
-        document.getElementById("pbgntCnwnxWhny").textContent = formatRupiah(pbgntCnwnxWhny.toFixed(0));
-        var obgnyOryv = hbairefvOryv + nbgnyCnwnxOcau;
-        document.getElementById("obgnyOryv").textContent = formatRupiah(obgnyOryv.toFixed(0));
-        var qzqnyThny = ibairefvBzna - pbgntCnwnxWhny;
-        document.getElementById("qzqnyThny").textContent = formatRupiah(qzqnyThny.toFixed(0));
-        var rbgnyacndoriu = qzqnyThny - obgnyOryv;
-        var dnfuyXrfbyhehuna = Math.abs(rbgnyacndoriu);
-        var crefragnfr = ((qzqnyThny - obgnyOryv) / obgnyOryv) * 100;
-        if (rbgnyacndoriu < 0) {
-          document.getElementById("rbgnyacndoriu").textContent = "- " + formatRupiah(dnfuyXrfbyhehuna.toFixed(0)) + " (" + crefragnfr.toFixed(2) + "%)";
-        } else {
-          document.getElementById("rbgnyacndoriu").textContent = formatRupiah(dnfuyXrfbyhehuna.toFixed(0)) + " (" + crefragnfr.toFixed(2) + "%)"; } }
-      function reset() {
-        document.getElementById("abcdUnetn").value = "";
-        document.getElementById("bryvYbg").value = "";
-        document.getElementById("mnwnxOryv").value = "";
-        document.getElementById("fznbQnetn").value = "";
-        document.getElementById("ghnyYbg").value = "";
-        document.getElementById("lnwnxKhny").value = "";
-        document.getElementById("hbairefvOryv").textContent = "Rp.";
-        document.getElementById("nbgnyCnwnxOcau").textContent = "Rp.";
-        document.getElementById("obgnyOryv").textContent = "Rp.";
-        document.getElementById("ibairefvBzna").textContent = "Rp.";
-        document.getElementById("pbgntCnwnxWhny").textContent = "Rp.";
-        document.getElementById("qzqnyThny").textContent = "Rp.";
-        document.getElementById("rbgnyacndoriu").textContent = "Rp.";
-      }
-    </script>
+    <script src="script.js"></script>
+    <footer>
+      <p align="center">&copy; 2023 Kalkulator Profit Saham. All rights reserved By <a href="https://www.linkedin.com/in/muhammad-faisal-rifki/" class="text-white fw-bold">@M.Faisal Rifki</a></p>
+    </footer>
   </body>
 </html>

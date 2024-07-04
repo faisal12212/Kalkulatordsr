@@ -6,62 +6,62 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2 style="text-align: center">Kalkulator Profit Saham</h2>
-    <div class="chjon-alioj">
-      <label for="abcdUnetn">Beli:</label>
-      <input type="number" id="abcdUnetn" step="0.001" value="" placeholder="Nominal saham yang dibeli" />
+    <h2>Kalkulator Profit Saham</h2>
+    <div class="form-group">
+      <label for="buyPrice">Beli:</label>
+      <input type="number" id="buyPrice" step="0.001" value="" placeholder="Nominal saham yang dibeli" />
     </div>
-    <div class="chjon-alioj">
-      <label for="bryvYbg">Lot Beli:</label>
-      <input type="number" id="bryvYbg" value="" placeholder="Lot saham yang dibeli" />
+    <div class="form-group">
+      <label for="buyLot">Lot Beli:</label>
+      <input type="number" id="buyLot" value="" placeholder="Lot saham yang dibeli" />
     </div>
-    <div class="chjon-alioj">
-      <label for="mnwnxOryv">Fee Beli:</label>
-      <input type="number" id="mnwnxOryv" step="0.001" value="" placeholder="Pajak/Fee beli (15/0,15/0,1513 dsb)" />
+    <div class="form-group">
+      <label for="buyFee">Fee Beli:</label>
+      <input type="number" id="buyFee" step="0.001" value="" placeholder="Pajak/Fee beli (15/0,15/0,1513 dsb)" />
     </div>
-    <div class="chjon-alioj">
-      <label for="fznbQnetn">Jual:</label>
-      <input type="number" id="fznbQnetn" step="0.001" value="" placeholder="Nominal saham yang dijual" />
+    <div class="form-group">
+      <label for="sellPrice">Jual:</label>
+      <input type="number" id="sellPrice" step="0.001" value="" placeholder="Nominal saham yang dijual" />
     </div>
-    <div class="chjon-alioj">
-      <label for="ghnyYbg">Lot jual:</label>
-      <input type="number" id="ghnyYbg" value="" placeholder="Lot saham yang dijual" />
+    <div class="form-group">
+      <label for="sellLot">Lot Jual:</label>
+      <input type="number" id="sellLot" value="" placeholder="Lot saham yang dijual" />
     </div>
-    <div class="chjon-alioj">
-      <label for="lnwnxKhny">Fee Jual/:</label>
-      <input type="number" id="lnwnxKhny" step="0.001" value="" placeholder="Pajak/Fee Jual (25/0,25/0,2513 dsb)" />
+    <div class="form-group">
+      <label for="sellFee">Fee Jual:</label>
+      <input type="number" id="sellFee" step="0.001" value="" placeholder="Pajak/Fee Jual (25/0,25/0,2513 dsb)" />
     </div>
-    <button class="full-width-button" onclick="rbgnyacndoriu()">Hitung</button>
-    <button class="full-width-button" onclick="lymyn()">Reset</button>
-    <div class="chjon-alioj">
-      <label for="hbairefvOryv">Nominal Beli:</label>
-      <span id="hbairefvOryv" class="result"></span>
+    <button class="full-width-button" onclick="calculate()">Hitung</button>
+    <button class="full-width-button" onclick="reset()">Reset</button>
+    <div class="form-group">
+      <label>Nominal Beli:</label>
+      <span id="nominalBuy" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="ibairefvBzna">Nominal Jual:</label>
-      <span id="ibairefvBzna" class="result"></span>
+    <div class="form-group">
+      <label>Nominal Jual:</label>
+      <span id="nominalSell" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="obgnyOryv">Total Beli:</label>
-      <span id="obgnyOryv" class="result"></span>
+    <div class="form-group">
+      <label>Total Beli:</label>
+      <span id="totalBuy" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="qzqnyThny">Total Jual:</label>
-      <span id="qzqnyThny" class="result"></span>
+    <div class="form-group">
+      <label>Total Jual:</label>
+      <span id="totalSell" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="pbgntCnwnxWhny">Total Fee Jual:</label>
-      <span id="pbgntCnwnxWhny" class="result"></span>
+    <div class="form-group">
+      <label>Total Fee Beli:</label>
+      <span id="totalBuyFee" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="nbgnyCnwnxOcau">Total Fee Beli:</label>
-      <span id="nbgnyCnwnxOcau" class="result"></span>
+    <div class="form-group">
+      <label>Total Fee Jual:</label>
+      <span id="totalSellFee" class="result"></span>
     </div>
-    <div class="chjon-alioj">
-      <label for="Unfvy WhnyOryv">Gain/Loss Bersih:</label>
-      <span id="rbgnyacndoriu" class="result"></span>
+    <div class="form-group">
+      <label>Gain/Loss Bersih:</label>
+      <span id="netGainLoss" class="result"></span>
     </div>
-    <div id="arsbenqata-container">
+    <div id="info-container">
       <p><b> - Hasil Profit (Gain/Loss Bersih) yang masuk ke RDN 99% Akurat, keakurangnnya silakkan hubungi Skuritas masing-masing </b></p>
       <p><b> - Hasil Profit (Gain/Loss Bersih) di luar perhitungan biaya materai 10rb yang perhitungannya di atas 5juta dari hasil bersih</b></p>
       <p><b> - Biaya Tranding/Biaya Fee Beli dan Jual Saham berdasarkan Skuritas yang kalian pilih</b></p>
